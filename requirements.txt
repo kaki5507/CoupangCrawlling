@@ -1,0 +1,5 @@
+pandas
+selenium
+chromedriver-autoinstaller
+openpyxl
+fake-useragent
