@@ -10,9 +10,9 @@
 
 ## 🛠️ 사용 기술
 
-- **Python 3.10+** (최신 버전으로 크롤링 🚀)
+- **Python 3.10+** (slim버전을 이용하여 가볍게 크롤링 headless 모드 사용 🚀)
 - **Docker** 🐳: 컨테이너에서 실행하여 손쉽게 환경 설정
-- **Pandas** 📊: 데이터 분석과 엑셀 파일로 저장
+- **Pandas** 📊: 엑셀 파일로 저장
 - **Selenium** 🔍: 웹 페이지 자동화
 - **Chromedriver-autoinstaller** 🚗: 최신 크롬 드라이버 자동 설치
 - **Fake-useragent** 🕵️‍♂️: 봇 감지 우회용 랜덤 User-Agent 생성
@@ -28,6 +28,15 @@
 2. **엑셀로 데이터 저장** 📑:
     - 추출된 상품 이름과 가격을 **엑셀 파일**로 저장합니다.
     - 마지막에는 **총합**을 추가합니다.
+
+3. **엑셀로 저장된 데이터 내 컴퓨터로 가져오기** ✈:
+    - 도커 명령어를 이용하여 해당 xlsx 파일을 가져옵니다.
+
+```shell
+docker build -t kaki5507/randomcoupang:latest ./
+docker run -v /c/Users/user/Desktop/Random:/app kaki5507/randomcoupang:latest
+docker cp 컨테이너ID:/app/product_list.xlsx /c/Users/user/Desktop/
+
 
 ## 💾 결과 파일
 **결과는 product_list.xlsx라는 엑셀 파일로 저장됩니다. 각 상품의 이름과 가격은 물론, 마지막에는 총합까지 추가합니다. 💸**
