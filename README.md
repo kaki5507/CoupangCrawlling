@@ -36,7 +36,13 @@
 docker build -t kaki5507/randomcoupang:latest ./
 docker run -v /c/Users/user/Desktop/Random:/app kaki5507/randomcoupang:latest
 docker cp 컨테이너ID:/app/product_list.xlsx /c/Users/user/Desktop/
+```
 
+도커 오류났을 시 오류 분석
+- 보통 랜더링이 안돼서 태그를 못가져올때가 존재합니다.
+```shell
+docker logs 컨테이너ID | grep "price-value"
+```
 
 ## 💾 결과 파일
 **결과는 product_list.xlsx라는 엑셀 파일로 저장됩니다. 각 상품의 이름과 가격은 물론, 마지막에는 총합까지 추가합니다. 💸**
